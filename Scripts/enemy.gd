@@ -22,5 +22,5 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if not body.is_in_group("Player"):
 		return
-		
-	print("damage")
+	
+	body.take_damage(1)

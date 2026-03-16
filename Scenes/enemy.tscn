@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://u2b4k6a5qm08"]
+
+[ext_resource type="Script" uid="uid://cnvkmbo8e11kh" path="res://Scripts/enemy.gd" id="4_344ge"]
+[ext_resource type="Texture2D" uid="uid://cw8ve08co5tms" path="res://Sprites/Characters/character_0024.png" id="5_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="6_56vhr"]
+[ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="7_ta2yt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsmp6"]
+
+[sub_resource type="Animation" id="Animation_evi0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ynf5e")]
+}
+
+[sub_resource type="Animation" id="Animation_6444e"]
+resource_name = "fly"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_ynf5e"), ExtResource("6_56vhr"), ExtResource("7_ta2yt")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsmp6"]
+_data = {
+&"RESET": SubResource("Animation_evi0p"),
+&"fly": SubResource("Animation_6444e")
+}
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("4_344ge")
+move_direction = Vector2(0, -50)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("5_ynf5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lsmp6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lsmp6")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
