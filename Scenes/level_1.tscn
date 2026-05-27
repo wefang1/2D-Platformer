@@ -1,88 +1,253 @@
-[gd_scene load_steps=9 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene format=4 uid="uid://ds75lvm8eqf4l"]
 
-[ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_8ffim"]
 [ext_resource type="Script" uid="uid://cxf6k72rxnje8" path="res://Scripts/background_parallax.gd" id="1_lsmp6"]
-[ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_xfk5q"]
+[ext_resource type="Script" uid="uid://fl0bl3417v6s" path="res://Scripts/level.gd" id="1_wrinw"]
+[ext_resource type="Texture2D" uid="uid://dwnkfyklvxnix" path="res://Sprites/Farmer Story Backgrounds/Night house/1 layer Night house.png" id="3_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_xfk5q"]
+[ext_resource type="TileSet" uid="uid://cmtkricr8hwd3" path="res://Sprites/Farmer Story Sprites/new_tile_set.tres" id="3_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://u2b4k6a5qm08" path="res://Scenes/enemy.tscn" id="4_7p6j4"]
-[ext_resource type="PackedScene" uid="uid://d3hufhtnss3s0" path="res://Scenes/corn.tscn" id="5_6444e"]
+[ext_resource type="Texture2D" uid="uid://d2d2p616vofvi" path="res://Sprites/Farmer Story Backgrounds/Night house/2 layer Night house.png" id="4_oovug"]
+[ext_resource type="Texture2D" uid="uid://jc5wmf8n4c1k" path="res://Sprites/Farmer Story Backgrounds/Night house/3 layer Night house.png" id="5_8i23i"]
+[ext_resource type="PackedScene" uid="uid://d3hufhtnss3s0" path="res://Scenes/coin.tscn" id="5_6444e"]
+[ext_resource type="Texture2D" uid="uid://bec4jrseh3unc" path="res://Sprites/Farmer Story Backgrounds/Night house/4 layer Night house.png" id="6_8yhm2"]
 [ext_resource type="PackedScene" uid="uid://v4y3k3nglc6a" path="res://Scenes/end_flag.tscn" id="6_evi0p"]
+[ext_resource type="Texture2D" uid="uid://bi4ahrujsvcv2" path="res://Sprites/Farmer Story Backgrounds/Night house/5 layer Night house.png" id="7_pjppf"]
 [ext_resource type="PackedScene" uid="uid://c8ta1wr1gs2vo" path="res://Scenes/level_2.tscn" id="8_xrdnt"]
+[ext_resource type="PackedScene" uid="uid://7vy3uhyfgcps" path="res://Scenes/pause_menu.tscn" id="10_chwpn"]
+[ext_resource type="PackedScene" uid="uid://cog7t4rwfjty5" path="res://Scenes/vine.tscn" id="12_oovug"]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i23i"]
+size = Vector2(26.666683, 131.66664)
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Main" type="Node2D" unique_id=1824533174]
+script = ExtResource("1_wrinw")
+
+[node name="Background" type="Node2D" parent="." unique_id=1851299470]
+position = Vector2(1500, -50)
+scale = Vector2(1.5, 1.5)
+
+[node name="Background1" type="Node2D" parent="Background" unique_id=1906953378]
+position = Vector2(-1199.9999, -0.79999995)
+scale = Vector2(0.39999998, 0.39999998)
 script = ExtResource("1_lsmp6")
 
-[node name="BackgroundForest" type="Sprite2D" parent="Background"]
-modulate = Color(0.52455795, 0.98378724, 0.75156134, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8ffim")
+[node name="BackgroundForest6" type="Sprite2D" parent="Background/Background1" unique_id=629405390]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(689.99963, -263)
+scale = Vector2(5, 2.5)
+texture = ExtResource("3_6ioyp")
 
-[node name="BackgroundForest2" type="Sprite2D" parent="Background"]
-modulate = Color(0.52455795, 0.98378724, 0.75156134, 1)
-position = Vector2(512, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8ffim")
+[node name="BackgroundForest7" type="Sprite2D" parent="Background/Background1" unique_id=960871409]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(689.99963, -141.33334)
+scale = Vector2(5, 2.5)
+texture = ExtResource("3_6ioyp")
 
-[node name="BackgroundForest3" type="Sprite2D" parent="Background"]
-modulate = Color(0.52455795, 0.98378724, 0.75156134, 1)
-position = Vector2(-1024, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8ffim")
+[node name="BackgroundForest3" type="Sprite2D" parent="Background/Background1" unique_id=1721279037]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(-600, 1.9999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_6ioyp")
 
-[node name="BackgroundForest4" type="Sprite2D" parent="Background"]
-modulate = Color(0.52455795, 0.98378724, 0.75156134, 1)
-position = Vector2(1024, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8ffim")
+[node name="BackgroundForest2" type="Sprite2D" parent="Background/Background1" unique_id=1911010743]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(600, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_6ioyp")
 
-[node name="BackgroundForest5" type="Sprite2D" parent="Background"]
-modulate = Color(0.52455795, 0.98378724, 0.75156134, 1)
-position = Vector2(-512, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8ffim")
+[node name="BackgroundForest4" type="Sprite2D" parent="Background/Background1" unique_id=1209127642]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(1800.0001, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_6ioyp")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD+/wAAAAABAAEAAAD//wAAAAACAAEAAAAAAAAAAAACAAEAAAABAAAAAAACAAEAAAACAAAAAAADAAEAAAAIAAEAAAADAAYAAAALAAAAAAABAAEAAAAMAAAAAAACAAEAAAANAAAAAAADAAEAAAAFAAEAAAABAAYAAAD+/wEAAAABAAYAAAD+/wIAAAABAAYAAAD//wEAAAACAAYAAAD//wIAAAACAAYAAAAAAAEAAAACAAYAAAAAAAIAAAACAAYAAAABAAEAAAACAAYAAAABAAIAAAACAAYAAAACAAEAAAADAAYAAAACAAIAAAADAAYAAAD+/wMAAAABAAcAAAD//wMAAAACAAcAAAAAAAMAAAACAAcAAAABAAMAAAACAAcAAAACAAMAAAADAAcAAAAFAAIAAAABAAcAAAAIAAIAAAADAAcAAAALAAEAAAABAAYAAAALAAIAAAABAAcAAAAMAAEAAAACAAYAAAAMAAIAAAACAAcAAAANAAEAAAADAAYAAAANAAIAAAADAAcAAAARAP//AAACAAAAAAAQAP//AAABAAAAAAASAP//AAADAAAAAAAWAAEAAAABAAYAAAAWAAIAAAABAAcAAAAXAAEAAAACAAYAAAAXAAIAAAACAAcAAAAYAAEAAAADAAYAAAAYAAIAAAADAAcAAAAWAAAAAAABAAEAAAAXAAAAAAACAAEAAAAYAAAAAAADAAEAAAAbAAMAAAAAAAcAAFAcAAMAAAAAAAYAAFAdAAMAAAADAAcAAAAgAAIAAAABAAcAAAAhAAEAAAACAAYAAAAhAAIAAAACAAcAAAAhAAAAAAACAAEAAAAgAAAAAAABAAEAAAAFAAAAAAABAAEAAAAGAAAAAAACAAEAAAAHAAAAAAACAAEAAAAIAAAAAAADAAEAAAAGAAEAAAACAAYAAAAGAAIAAAACAAcAAAAHAAEAAAACAAYAAAAHAAIAAAACAAcAAAAbAP//AAAAAAAAAAAiAAIAAAADAAcAAAAjAAEAAAADAAcAAAAiAAEAAAACAAYAAAAjAAAAAAADAAEAAAAiAAAAAAACAAEAAAAgAAEAAAABAAYAAAAdAAIAAAAAAAEAAAAlAAQAAAAAAAIAAAA=")
-tile_set = ExtResource("2_xfk5q")
+[node name="BackgroundForest5" type="Sprite2D" parent="Background/Background1" unique_id=1691309003]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(3000, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("3_6ioyp")
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_xfk5q")]
+[node name="Background2" type="Node2D" parent="Background" unique_id=1095115715]
+position = Vector2(-1199.9999, -0.79999995)
+scale = Vector2(0.39999998, 0.39999998)
+script = ExtResource("1_lsmp6")
 
-[node name="Enemies" type="Node" parent="."]
+[node name="BackgroundForest3" type="Sprite2D" parent="Background/Background2" unique_id=533902753]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(-600, 1.9999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_oovug")
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("4_7p6j4")]
-position = Vector2(72, 18)
+[node name="BackgroundForest2" type="Sprite2D" parent="Background/Background2" unique_id=594993573]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(600.00006, 3)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_oovug")
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("4_7p6j4")]
-position = Vector2(181, 22)
+[node name="BackgroundForest4" type="Sprite2D" parent="Background/Background2" unique_id=624943193]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(1800.0001, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_oovug")
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("4_7p6j4")]
-position = Vector2(272, 11)
+[node name="BackgroundForest5" type="Sprite2D" parent="Background/Background2" unique_id=71626873]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(3000, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_oovug")
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource("4_7p6j4")]
-position = Vector2(381, 13)
+[node name="Background3" type="Node2D" parent="Background" unique_id=1729537113]
+position = Vector2(-1199.9999, -0.79999995)
+scale = Vector2(0.39999998, 0.39999998)
+script = ExtResource("1_lsmp6")
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource("4_7p6j4")]
-position = Vector2(648, 107)
+[node name="BackgroundForest3" type="Sprite2D" parent="Background/Background3" unique_id=1982475936]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(-600, 1.9999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_8i23i")
 
-[node name="Corns" type="Node" parent="."]
+[node name="BackgroundForest2" type="Sprite2D" parent="Background/Background3" unique_id=339643213]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(600, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_8i23i")
 
-[node name="Corn" parent="Corns" instance=ExtResource("5_6444e")]
-position = Vector2(553, -34)
+[node name="BackgroundForest4" type="Sprite2D" parent="Background/Background3" unique_id=1685985428]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(1800.0001, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_8i23i")
 
-[node name="Corn2" parent="Corns" instance=ExtResource("5_6444e")]
-position = Vector2(150, -12)
+[node name="BackgroundForest5" type="Sprite2D" parent="Background/Background3" unique_id=1105249432]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(3000, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_8i23i")
 
-[node name="Corn3" parent="Corns" instance=ExtResource("5_6444e")]
-position = Vector2(263, -48)
+[node name="Background4" type="Node2D" parent="Background" unique_id=1957828084]
+position = Vector2(-1199.9999, -0.79999995)
+scale = Vector2(0.39999998, 0.39999998)
+script = ExtResource("1_lsmp6")
 
-[node name="Corn4" parent="Corns" instance=ExtResource("5_6444e")]
-position = Vector2(374, -35)
+[node name="BackgroundForest3" type="Sprite2D" parent="Background/Background4" unique_id=1295014554]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(-600, 1.9999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_8yhm2")
 
-[node name="Corn5" parent="Corns" instance=ExtResource("5_6444e")]
-position = Vector2(651, 50)
+[node name="BackgroundForest2" type="Sprite2D" parent="Background/Background4" unique_id=1912674585]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(600, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_8yhm2")
 
-[node name="EndFlag" parent="." instance=ExtResource("6_evi0p")]
-position = Vector2(618, 68)
+[node name="BackgroundForest4" type="Sprite2D" parent="Background/Background4" unique_id=803962474]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(1800.0001, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_8yhm2")
+
+[node name="BackgroundForest5" type="Sprite2D" parent="Background/Background4" unique_id=300985357]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(3000, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_8yhm2")
+
+[node name="Background5" type="Node2D" parent="Background" unique_id=1951660943]
+position = Vector2(-1199.9999, -0.79999995)
+scale = Vector2(0.39999998, 0.39999998)
+script = ExtResource("1_lsmp6")
+
+[node name="BackgroundForest3" type="Sprite2D" parent="Background/Background5" unique_id=1590649752]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(-600, 1.9999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_pjppf")
+
+[node name="BackgroundForest2" type="Sprite2D" parent="Background/Background5" unique_id=123699258]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(600, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_pjppf")
+
+[node name="BackgroundForest4" type="Sprite2D" parent="Background/Background5" unique_id=1693753069]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(1800.0001, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_pjppf")
+
+[node name="BackgroundForest5" type="Sprite2D" parent="Background/Background5" unique_id=1541215869]
+modulate = Color(0.86510354, 0.819856, 0.47532505, 1)
+position = Vector2(3000, 2)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("7_pjppf")
+
+[node name="TileMap" type="TileMap" parent="." unique_id=463900748]
+position = Vector2(64, 22)
+format = 2
+
+[node name="Land" type="TileMapLayer" parent="TileMap" unique_id=555501904 groups=["Land"]]
+position = Vector2(-64, -22)
+tile_map_data = PackedByteArray("AAD1/wYAAQAAAA0AAAD1/wcAAQAAAA4AAAD1/wgAAQAAAA4AAAD1/wkAAQAAAA4AAAD1/woAAQAAAA4AAAD2/wYAAQAAAA0AAAD2/wcAAQAAAA4AAAD2/wgAAQAAAA4AAAD2/wkAAQAAAA4AAAD2/woAAQAAAA4AAAD3/wYAAQAAAA0AAAD3/wcAAQAAAA4AAAD3/wgAAQAAAA4AAAD3/wkAAQAAAA4AAAD3/woAAQAAAA4AAAD4/wYAAQAAAA0AAAD4/wcAAQAAAA4AAAD4/wgAAQAAAA4AAAD4/wkAAQAAAA4AAAD4/woAAQAAAA4AAAD5/wYAAQAAAA0AAAD5/wcAAQAAAA4AAAD5/wgAAQAAAA4AAAD5/wkAAQAAAA4AAAD5/woAAQAAAA4AAAD6/wYAAQAAAA0AAAD6/wcAAQAAAA4AAAD6/wgAAQAAAA4AAAD6/wkAAQAAAA4AAAD6/woAAQAAAA4AAAD7/wYAAQAAAA0AAAD7/wcAAQAAAA4AAAD7/wgAAQAAAA4AAAD7/wkAAQAAAA4AAAD7/woAAQAAAA4AAAD8/wYAAQAAAA0AAAD8/wcAAQAAAA4AAAD8/wgAAQAAAA4AAAD8/wkAAQAAAA4AAAD8/woAAQAAAA4AAAD9/wYAAQAAAA0AAAD9/wcAAQAAAA4AAAD9/wgAAQAAAA4AAAD9/wkAAQAAAA4AAAD9/woAAQAAAA4AAAD+/wYAAQAAAA0AAAD+/wcAAQAAAA4AAAD+/wgAAQAAAA4AAAD+/wkAAQAAAA4AAAD+/woAAQAAAA4AAAD//wYAAQAAAA0AAAD//wcAAQAAAA4AAAD//wgAAQAAAA4AAAD//wkAAQAAAA4AAAD//woAAQAAAA4AAAAAAAYAAQAAAA0AAAAAAAcAAQAAAA4AAAAAAAgAAQAAAA4AAAAAAAkAAQAAAA4AAAAAAAoAAQAAAA4AAAABAAYAAQAAAA0AAAABAAcAAQAAAA4AAAABAAgAAQAAAA4AAAABAAkAAQAAAA4AAAABAAoAAQAAAA4AAAACAAYAAQAAAA0AAAACAAcAAQAAAA4AAAACAAgAAQAAAA4AAAACAAkAAQAAAA4AAAACAAoAAQAAAA4AAAADAAYAAQAAAA0AAAADAAcAAQAAAA4AAAADAAgAAQAAAA4AAAADAAkAAQAAAA4AAAADAAoAAQAAAA4AAAAEAAYAAQAAAA0AAAAEAAcAAQAAAA4AAAAEAAgAAQAAAA4AAAAEAAkAAQAAAA4AAAAEAAoAAQAAAA4AAAAFAAYAAQAAAA0AAAAFAAcAAQAAAA4AAAAFAAgAAQAAAA4AAAAFAAkAAQAAAA4AAAAFAAoAAQAAAA4AAAAGAAYAAQAAAA0AAAAGAAcAAQAAAA4AAAAGAAgAAQAAAA4AAAAGAAkAAQAAAA4AAAAGAAoAAQAAAA4AAAAHAAYAAQAAAA0AAAAHAAcAAQAAAA4AAAAHAAgAAQAAAA4AAAAHAAkAAQAAAA4AAAAHAAoAAQAAAA4AAAAIAAYAAQAAAA0AAAAIAAcAAQAAAA4AAAAIAAgAAQAAAA4AAAAIAAkAAQAAAA4AAAAIAAoAAQAAAA4AAAAJAAYAAQAAAA0AAAAJAAcAAQAAAA4AAAAJAAgAAQAAAA4AAAAJAAkAAQAAAA4AAAAJAAoAAQAAAA4AAAAKAAYAAQAAAA0AAAAKAAcAAQAAAA4AAAAKAAgAAQAAAA4AAAAKAAkAAQAAAA4AAAAKAAoAAQAAAA4AAAALAAYAAQAAAA0AAAALAAcAAQAAAA4AAAALAAgAAQAAAA4AAAALAAkAAQAAAA4AAAALAAoAAQAAAA4AAAAMAAYAAQAAAA0AAAAMAAcAAQAAAA4AAAAMAAgAAQAAAA4AAAAMAAkAAQAAAA4AAAAMAAoAAQAAAA4AAAANAAYAAQAAAA0AAAANAAcAAQAAAA4AAAANAAgAAQAAAA4AAAANAAkAAQAAAA4AAAANAAoAAQAAAA4AAAAOAAYAAQAAAA0AAAAOAAcAAQAAAA4AAAAOAAgAAQAAAA4AAAAOAAkAAQAAAA4AAAAOAAoAAQAAAA4AAAAPAAYAAQAAAA0AAAAPAAcAAQAAAA4AAAAPAAgAAQAAAA4AAAAPAAkAAQAAAA4AAAAPAAoAAQAAAA4AAAD2//3/AQAJAA0AAAD2//7/AQAJAA0AAAD2////AQAJAA0AAAD2/wAAAQAJAA0AAAD2/wEAAQAJAA0AAAD2/wIAAQAJAA0AAAD2/wMAAQAJAA0AAAD2/wQAAQAJAA0AAAD2/wUAAQAJAA0AAAD1//z/AQAJAA0AAAD2//z/AQAJAA0AAAD2//v/AQAJAA0AAAAOAPv/AQAJAA0AAAAOAPz/AQAJAA0AAAAOAP3/AQAJAA0A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")
+tile_set = ExtResource("3_xrdnt")
+
+[node name="Player" parent="." unique_id=1974436612 groups=["Player"] instance=ExtResource("3_xfk5q")]
+position = Vector2(208, 96)
+
+[node name="Enemies" type="Node" parent="." unique_id=252696967]
+
+[node name="Enemy" parent="Enemies" unique_id=557273663 instance=ExtResource("4_7p6j4")]
+position = Vector2(18, 9)
+
+[node name="Enemy2" parent="Enemies" unique_id=28798064 instance=ExtResource("4_7p6j4")]
+position = Vector2(136, 80)
+
+[node name="Enemy3" parent="Enemies" unique_id=1498226907 instance=ExtResource("4_7p6j4")]
+position = Vector2(178, -10)
+move_direction = Vector2(-50, 0)
+
+[node name="Enemy4" parent="Enemies" unique_id=888056255 instance=ExtResource("4_7p6j4")]
+position = Vector2(-31, -54)
+move_direction = Vector2(70, 0)
+
+[node name="Enemy5" parent="Enemies" unique_id=1991590611 instance=ExtResource("4_7p6j4")]
+position = Vector2(65, -123)
+move_direction = Vector2(-50, 0)
+
+[node name="Coins" type="Node" parent="." unique_id=441071431]
+
+[node name="Coin" parent="Coins" unique_id=133145833 instance=ExtResource("5_6444e")]
+visible = false
+position = Vector2(532, -71)
+
+[node name="Coin2" parent="Coins" unique_id=1828041836 instance=ExtResource("5_6444e")]
+visible = false
+position = Vector2(-1, -30)
+
+[node name="Coin3" parent="Coins" unique_id=1315773863 instance=ExtResource("5_6444e")]
+visible = false
+position = Vector2(277, 12)
+
+[node name="Coin4" parent="Coins" unique_id=895201361 instance=ExtResource("5_6444e")]
+visible = false
+position = Vector2(311, -80)
+
+[node name="Coin5" parent="Coins" unique_id=123906876 instance=ExtResource("5_6444e")]
+visible = false
+position = Vector2(455, -49)
+
+[node name="Vine" parent="." unique_id=309867991 instance=ExtResource("12_oovug")]
+position = Vector2(150, -182.99998)
+scale = Vector2(0.59999996, 0.59999996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vine" unique_id=2128890164]
+position = Vector2(3.3333282, 50.833344)
+shape = SubResource("RectangleShape2D_8i23i")
+
+[node name="EndFlag" parent="." unique_id=605732121 instance=ExtResource("6_evi0p")]
+position = Vector2(168.00002, -184.00002)
+scale = Vector2(0.8174731, 0.8174731)
 scene_to_load = ExtResource("8_xrdnt")
+
+[node name="PauseMenu" parent="." unique_id=1329120288 instance=ExtResource("10_chwpn")]

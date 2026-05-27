@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://raga32pd2wg2"]
+
+[node name="Timer" type="CanvasLayer" unique_id=1013694577]
+
+[node name="TimeBar" type="ProgressBar" parent="." unique_id=62627530]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="TimeLable" type="Label" parent="." unique_id=1870896688]
+offset_right = 40.0
+offset_bottom = 23.0

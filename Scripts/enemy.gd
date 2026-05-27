@@ -24,3 +24,4 @@ func _on_body_entered(body):
 		return
 	
 	body.take_damage(1)
+	body.time_start(5)

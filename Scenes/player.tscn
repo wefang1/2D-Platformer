@@ -1,14 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://dv0g1jn3n7ini"]
+[gd_scene format=3 uid="uid://dv0g1jn3n7ini"]
 
 [ext_resource type="Script" uid="uid://dm4f85m18rkkw" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://dyq7dh6jlegru" path="res://Sprites/Characters/character_0000.png" id="1_v0iea"]
-[ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://dxybxbshfco06" path="res://Scripts/camera_shake.gd" id="3_x3wgy"]
 [ext_resource type="Script" uid="uid://cba8j20gldbae" path="res://Scripts/player_ui.gd" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bfpxjrxwvjk8d" path="res://Sprites/Characters/character_1/Character idle.png" id="4_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://bk7l6wviatb4f" path="res://Sprites/Characters/character_1/Platformer character10.png" id="5_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://bbwo5s3oul2nw" path="res://Sprites/Characters/character_1/Character jump.png" id="5_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://dvjxvsk0gpw7u" path="res://Sprites/Characters/character_1/Platformer character1.png" id="6_qqcod"]
+[ext_resource type="Texture2D" uid="uid://cedra8o1ya056" path="res://Sprites/Characters/character_1/Platformer character2.png" id="7_igrcy"]
+[ext_resource type="Texture2D" uid="uid://cer2mfwgfdihr" path="res://Sprites/Characters/character_1/Platformer character3.png" id="8_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://cbkmsp3griu40" path="res://Sprites/Characters/character_1/Platformer character4.png" id="9_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://dbbb6j7laf7x1" path="res://Sprites/Characters/character_1/Platformer character5.png" id="10_olqyp"]
+[ext_resource type="Texture2D" uid="uid://dx18vp0emjypd" path="res://Sprites/Characters/character_1/Platformer character6.png" id="11_wpjfl"]
+[ext_resource type="Texture2D" uid="uid://cnia0sax82oyx" path="res://Sprites/Characters/character_1/Platformer character7.png" id="12_bi64h"]
+[ext_resource type="Texture2D" uid="uid://bf8tai20k3k7w" path="res://Sprites/Characters/character_1/Platformer character8.png" id="13_2ijsl"]
+[ext_resource type="Texture2D" uid="uid://bts4og10bck56" path="res://Sprites/Characters/character_1/Platformer character9.png" id="14_p1odr"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-height = 24.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu2lt"]
+radius = 5.5
+height = 16.0
 
 [sub_resource type="Animation" id="Animation_fkybt"]
 length = 0.001
@@ -22,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_v0iea")]
+"values": [ExtResource("4_pu2lt")]
 }
 
 [sub_resource type="Animation" id="Animation_vgqql"]
@@ -39,7 +50,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_v0iea")]
+"values": [ExtResource("4_pu2lt")]
 }
 
 [sub_resource type="Animation" id="Animation_3smsa"]
@@ -54,12 +65,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_6t5aa")]
+"values": [ExtResource("5_ukyrk")]
 }
 
 [sub_resource type="Animation" id="Animation_x3wgy"]
 resource_name = "move"
-length = 0.25
+length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -67,10 +79,10 @@ tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35000002, 0.4, 0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_6t5aa"), ExtResource("1_v0iea")]
+"values": [ExtResource("5_fd4e3"), ExtResource("6_qqcod"), ExtResource("7_igrcy"), ExtResource("8_fs7ks"), ExtResource("9_l6n3p"), ExtResource("10_olqyp"), ExtResource("11_wpjfl"), ExtResource("12_bi64h"), ExtResource("13_2ijsl"), ExtResource("14_p1odr"), ExtResource("5_fd4e3")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8erm5"]
@@ -85,60 +97,86 @@ _data = {
 font_size = 38
 shadow_color = Color(0, 0, 0, 0.50980395)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gymyn"]
+bg_color = Color(0.19687936, 0.71733224, 0.17955622, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+corner_detail = 20
+
+[node name="Player" type="CharacterBody2D" unique_id=1974436612]
 script = ExtResource("1_cvnsp")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_v0iea")
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2126488986 groups=["Player"]]
+position = Vector2(0, 3)
+texture = ExtResource("4_pu2lt")
 offset = Vector2(0, -12)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
-shape = SubResource("CapsuleShape2D_cvnsp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=963675794]
+position = Vector2(-0.5, -8)
+shape = SubResource("CapsuleShape2D_pu2lt")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2100242849]
 position = Vector2(0, -23)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 script = ExtResource("3_x3wgy")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8erm5")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1740019644]
+libraries/ = SubResource("AnimationLibrary_8erm5")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1003152940]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=84619386]
+visible = false
 script = ExtResource("4_fkybt")
 
-[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=960367336]
 offset_left = 10.0
 offset_top = 10.0
-offset_right = 450.0
+offset_right = 818.0
 offset_bottom = 90.0
 
-[node name="Health" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+[node name="Health" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=535219357]
 layout_mode = 2
 texture = ExtResource("4_vgqql")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Health2" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+[node name="Health2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=957761165]
 layout_mode = 2
 texture = ExtResource("4_vgqql")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Health3" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+[node name="Health3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1392421328]
 layout_mode = 2
 texture = ExtResource("4_vgqql")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ScoreText" type="Label" parent="CanvasLayer"]
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=550899660]
 offset_left = 22.0
 offset_top = 92.0
-offset_right = 102.0
-offset_bottom = 122.0
-text = "Score: 500"
+offset_right = 230.0
+offset_bottom = 145.0
+text = "Score: 500g"
 label_settings = SubResource("LabelSettings_fkybt")
+
+[node name="StaminaBar" type="ProgressBar" parent="CanvasLayer" unique_id=454042004]
+offset_left = 450.0
+offset_top = 576.0
+offset_right = 670.0
+offset_bottom = 603.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_gymyn")
+value = 100.0
+
+[node name="TimeText" type="Label" parent="CanvasLayer" unique_id=965818104]
+offset_left = 22.0
+offset_top = 149.0
+offset_right = 153.0
+offset_bottom = 202.0
+text = "Time Left: 0 sec"
+label_settings = SubResource("LabelSettings_fkybt")
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=991660079]
